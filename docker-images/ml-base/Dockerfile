@@ -27,3 +27,5 @@ RUN echo "c.NotebookApp.ip = '0.0.0.0'" >> /home/ubuntu/.jupyter/jupyter_noteboo
 # Jupyter listens port
 EXPOSE $JUPYTER_NOTEBOOK_PORT
 
+# Install XGBoost
+RUN pip install xgboost
