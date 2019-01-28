@@ -1,9 +1,9 @@
-1. start the container
+#. start the container
 ```
 docker run -it -p 8888:8888 --env="DISPLAY" -v "$PWD/notebooks:/home/ubuntu/notebooks" sewook/ml-base
 ```
 
-1. start jupyter notebook 
+#. start jupyter notebook 
 ```
 jupyter notebook --allow-root --notebook-dir=/home/ubuntu/notebooks --port=8888 --no-browser
 ```
@@ -17,12 +17,12 @@ Find the token value from the log. The token value changes every time the contai
         http://(00e1dc8c35b6 or 127.0.0.1):8888/?token=39cc883e8ceef0f76acfaee4d19ea5f05c51ff7db0176e76
 ```
 
-1. open the browser
+#. open the browser
 ```
 http://localhost:8888/?token=39cc883e8ceef0f76acfaee4d19ea5f05c51ff7db0176e76
 ```
 
-1. Open the xgboost_tutorial notebook and follow instruction. 
+#. Open the xgboost_tutorial notebook and follow instruction. 
 
 For more information, refer to the original blog post: https://www.datacamp.com/community/tutorials/xgboost-in-python
 
