@@ -1,21 +1,8 @@
-# Start from Ubuntu latest
-FROM ubuntu:18.04
+# Start from ubuntu-basic
+FROM sewook/ubuntu-basic
 
 ARG ANACONDA_VERSION=5.0.1-Linux-x86_64
 ARG JUPYTER_NOTEBOOK_PORT=8888
-
-
-# Update apt 
-RUN apt-get update && yes|apt-get upgrade
-
-RUN apt-get install -y wget sudo vim
-# Add user ubuntu with no password, add to sudo group
-RUN adduser --disabled-password --gecos '' ubuntu
-RUN adduser ubuntu sudo
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-USER ubuntu
-WORKDIR /home/ubuntu/
-RUN chmod a+rwx /home/ubuntu/
 
 # Anaconda installing
 RUN wget https://repo.continuum.io/archive/Anaconda3-$ANACONDA_VERSION.sh
@@ -40,5 +27,3 @@ RUN echo "c.NotebookApp.ip = '0.0.0.0'" >> /home/ubuntu/.jupyter/jupyter_noteboo
 # Jupyter listens port
 EXPOSE $JUPYTER_NOTEBOOK_PORT
 
-# Run Jupytewr notebook as Docker main process
-CMD ["jupyter", "notebook", "--allow-root", "--notebook-dir=/home/ubuntu/notebooks", "--port=8888", "--no-browser"]
