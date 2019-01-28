@@ -1,9 +1,9 @@
-## 1. start the container
+## 1. Start the container
 ```
 docker run -it -p 8888:8888 --env="DISPLAY" -v "$PWD/notebooks:/home/ubuntu/notebooks" sewook/ml-base
 ```
 
-## 2. start jupyter notebook 
+## 2. Start jupyter notebook 
 ```
 jupyter notebook --allow-root --notebook-dir=/home/ubuntu/notebooks --port=8888 --no-browser
 ```
@@ -17,7 +17,7 @@ Find the token value from the log. The token value changes every time the contai
         http://(00e1dc8c35b6 or 127.0.0.1):8888/?token=39cc883e8ceef0f76acfaee4d19ea5f05c51ff7db0176e76
 ```
 
-## 3. open the browser
+## 3. Open the browser
 ```
 http://localhost:8888/?token=39cc883e8ceef0f76acfaee4d19ea5f05c51ff7db0176e76
 ```
