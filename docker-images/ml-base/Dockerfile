@@ -29,3 +29,7 @@ EXPOSE $JUPYTER_NOTEBOOK_PORT
 
 # Install XGBoost
 RUN pip install xgboost
+
+# Install graphviz
+RUN apt-get install -y graphviz
+RUN pip install graphviz
