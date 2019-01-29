@@ -28,8 +28,11 @@ RUN echo "c.NotebookApp.ip = '0.0.0.0'" >> /home/ubuntu/.jupyter/jupyter_noteboo
 EXPOSE $JUPYTER_NOTEBOOK_PORT
 
 # Install XGBoost
-RUN pip install xgboost
+RUN pip install --upgrade xgboost
 
 # Install graphviz
 RUN sudo apt-get install -y graphviz
-RUN pip install graphviz
+RUN pip install --upgrade graphviz
+
+# Install tensorflow
+RUN pip install --upgrade tensorflow
